@@ -1,0 +1,73 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+
+const title = "Careers at Zoul Capital";
+const description = "Explore career opportunities with Zoul Capital and submit your profile for future openings.";
+---
+
+<MainLayout title={title} description={description} canonicalPath="/careers">
+  <main class="min-h-screen bg-background-light py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md mx-auto">
+      <div class="text-center mb-8">
+        <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zoul%20(2)-FStLOd3KoWvG8VWrwNiqVHUnwA2aWx.png"
+          alt="Zoul Capital logo"
+          width="64"
+          height="64"
+          class="mx-auto rounded"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <section class="bg-white rounded-lg shadow-md overflow-hidden" aria-labelledby="careers-heading">
+        <div class="px-4 py-5 sm:p-6">
+          <h1 id="careers-heading" class="text-2xl font-bold text-background-dark mb-4">Be Part of Our Team</h1>
+          <form class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+              <input id="name" name="name" type="text" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+              <input id="email" name="email" type="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary" />
+            </div>
+            <div>
+              <label for="resume" class="block text-sm font-medium text-gray-700">Resume/CV</label>
+              <input id="resume" name="resume" type="file" required class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary-dark" />
+            </div>
+            <div>
+              <label for="languages" class="block text-sm font-medium text-gray-700">Languages Spoken</label>
+              <select id="languages" name="languages" multiple class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
+                <option value="spanish">Spanish</option>
+                <option value="english">English</option>
+                <option value="valencian">Valencian</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="workAuth" class="block text-sm font-medium text-gray-700">Work Authorization</label>
+              <select id="workAuth" name="workAuth" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
+                <option value="">Select authorization status</option>
+                <option value="eu">EU Citizen</option>
+                <option value="spain">Spanish Work Permit</option>
+                <option value="need">Will need sponsorship</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Why do you want to work with Zoul Capital?</label>
+              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary"></textarea>
+            </div>
+            <button type="submit" class="w-full flex justify-center py-2 px-4 rounded-md text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+              Send Application
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <div class="mt-8 text-center">
+        <a href="/" class="inline-flex items-center text-primary hover:text-primary-dark">Back to Home</a>
+      </div>
+    </div>
+  </main>
+</MainLayout>

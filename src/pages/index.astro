@@ -1,0 +1,293 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import BackgroundParticles from "@/components/BackgroundParticles.astro";
+
+const title = "Zoul Capital | Private Family Investment Office | Spain";
+const description =
+  "Zoul Capital is a private family office managing investments in real estate, education, and innovative technologies with a focus on long-term value creation and generational wealth preservation.";
+const keywords = [
+  "family office",
+  "private investment",
+  "wealth management",
+  "real estate investment",
+  "educational investments",
+  "Spain family office",
+  "generational wealth",
+  "private holding company",
+];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Zoul Capital",
+    url: "https://zoul.capital",
+    logo: "https://zoul.capital/logo.png",
+    description,
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "Spain",
+    },
+    sameAs: ["https://www.linkedin.com/company/zoul-capital"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Zoul Capital",
+    url: "https://zoul.capital",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is Zoul Capital?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Zoul Capital is a privately held investment firm that manages and grows the financial and generational wealth of a single family.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What industries does Zoul Capital invest in?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Zoul Capital primarily invests in real estate assets, private educational institutions, and educational service providers while evaluating opportunities in technology and manufacturing.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does Zoul Capital provide external management services?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Zoul Capital operates exclusively as a family office and does not provide external management services.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<MainLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath="/"
+  ogImage="/og-image.jpg"
+  twitterImage="/twitter-image.jpg"
+  structuredData={structuredData}
+>
+  <div class="relative min-h-screen flex flex-col">
+    <BackgroundParticles />
+    <header class="sticky top-0 z-30 h-[6.5rem] bg-white/90 backdrop-blur shadow-sm reveal-down" data-reveal>
+      <div class="container mx-auto px-4 h-full flex items-center justify-between">
+        <a href="#top" class="flex items-center gap-4" aria-label="Zoul Capital home">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zoul%20(2)-FStLOd3KoWvG8VWrwNiqVHUnwA2aWx.png"
+            alt="Zoul Capital logo"
+            width="52"
+            height="52"
+            class="rounded"
+            loading="eager"
+            decoding="async"
+          />
+          <span class="text-2xl md:text-3xl font-bold text-background-dark">Zoul Capital</span>
+        </a>
+
+        <nav aria-label="Primary" class="text-base md:text-lg">
+          <ul class="flex items-center gap-5 md:gap-8 text-slate-700">
+            <li><a href="#about" class="hover:text-primary">About</a></li>
+            <li><a href="#mission" class="hover:text-primary">Mission</a></li>
+            <li><a href="#approach" class="hover:text-primary">Approach</a></li>
+            <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="flex-1">
+      <section class="min-h-[calc(100vh-6.5rem)] min-h-[calc(100svh-6.5rem)] flex items-center justify-center text-center text-white px-4 py-14 md:py-24" aria-labelledby="hero-heading">
+        <div class="max-w-5xl">
+          <h1 id="hero-heading" class="text-5xl md:text-7xl font-extrabold tracking-tight reveal-up" data-reveal>Zoul Capital</h1>
+          <p class="text-2xl md:text-3xl mt-7 reveal-up" data-reveal data-delay="120">A Private Family Holding Company</p>
+          <a href="#contact" class="mt-10 inline-flex items-center rounded-full bg-white px-8 py-4 text-lg text-primary font-semibold hover:bg-slate-100 reveal-up" data-reveal data-delay="220">Contact Us</a>
+        </div>
+      </section>
+
+      <section id="about" class="py-24 bg-background-light" aria-labelledby="about-heading">
+        <div class="container mx-auto px-4">
+          <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-10 md:p-12 reveal-up" data-reveal>
+            <h2 id="about-heading" class="text-4xl font-bold text-background-dark text-center mb-10">About Us</h2>
+            <p class="text-xl text-slate-600 mb-8">
+              Zoul Capital is a privately held investment firm that manages and grows the financial and generational wealth of a single family.
+              Our focus is to protect and enhance long-term interests by investing in opportunities with proven value and sustainable growth potential.
+            </p>
+            <p class="text-xl text-slate-600">
+              We currently manage a portfolio of real estate assets, private educational institutions, and educational service providers.
+              We are also actively seeking acquisitions in aligned sectors including manufacturing, distribution, and technology.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mission" class="py-24 bg-white" aria-labelledby="mission-heading">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+          <div class="reveal-left" data-reveal>
+            <h2 id="mission-heading" class="text-4xl font-bold text-background-dark mb-6">What We Do</h2>
+            <p class="text-xl text-slate-600">
+              We focus on investments aligned with family legacy and durable impact.
+              Decisions are made through disciplined analysis to deliver security, resilient value creation, and consistent long-term returns.
+            </p>
+          </div>
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/foto%20artes%20y%20las%20ciencias.jpg-QgE4zu6uoElJ8ULDYFSyw7QeRLq0Nh.jpeg"
+            alt="City of Arts and Sciences in Valencia, Spain"
+            class="h-[500px] w-full object-cover rounded-xl shadow reveal-right"
+            data-reveal
+            data-delay="100"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </section>
+
+      <section id="approach" class="bg-white py-24" aria-labelledby="approach-heading">
+        <div class="container mx-auto px-4">
+          <h2 id="approach-heading" class="text-4xl font-bold text-center text-background-dark mb-16 reveal-up" data-reveal>Our Approach: Principled. Thoughtful. Selective.</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <article class="bg-white rounded-xl shadow p-8 reveal-up" data-reveal data-delay="80">
+              <h3 class="text-2xl font-semibold mb-3">Selective Investments</h3>
+              <p class="text-lg text-slate-600">Every decision is guided by careful analysis and a focus on scalable, sustainable opportunities.</p>
+            </article>
+            <article class="bg-white rounded-xl shadow p-8 reveal-up" data-reveal data-delay="160">
+              <h3 class="text-2xl font-semibold mb-3">Stewardship</h3>
+              <p class="text-lg text-slate-600">We act as long-term custodians of family wealth, ensuring preservation and growth across generations.</p>
+            </article>
+            <article class="bg-white rounded-xl shadow p-8 reveal-up" data-reveal data-delay="240">
+              <h3 class="text-2xl font-semibold mb-3">Strategic Focus & Discretion</h3>
+              <p class="text-lg text-slate-600">Investments are selected for alignment with core interests while maintaining discretion and rigor.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 bg-background-light" aria-labelledby="focus-heading">
+        <div class="container mx-auto px-4">
+          <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-10 md:p-12 reveal-up" data-reveal>
+            <h2 id="focus-heading" class="text-4xl font-bold text-background-dark text-center mb-10">Our Focus</h2>
+            <p class="text-xl text-slate-600 text-center mb-12">
+              While maintaining a diverse portfolio, our investment preferences reflect long-term value creation in high-potential industries.
+            </p>
+            <div class="space-y-8 text-xl text-slate-600">
+              <div>
+                <h3 class="font-semibold">Real Estate</h3>
+                <p>We identify, acquire, and manage assets with strong growth potential and resilient value.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold">Educational Institutions</h3>
+                <p>We support schools and universities committed to transformative education and excellence.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold">Educational Services</h3>
+                <p>We partner with businesses delivering innovation in learning and professional development.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-24 bg-white" aria-labelledby="contact-heading">
+        <div class="container mx-auto px-4 text-center max-w-4xl reveal-up" data-reveal>
+          <h2 id="contact-heading" class="text-4xl font-bold text-background-dark mb-8">Contact Us</h2>
+          <p class="text-2xl text-slate-600 mb-5">Zoul Capital operates exclusively as a family office and does not provide external management services.</p>
+          <p class="text-xl text-slate-600 mb-10">For internal inquiries or partnerships aligned with our focus, use our contact form.</p>
+          <a href="/contact" class="inline-flex items-center bg-primary text-white text-lg font-semibold px-8 py-4 rounded-full hover:bg-primary-dark">Contact Us</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-background-dark text-white py-10 reveal-up" data-reveal>
+      <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zoul%20(2)-FStLOd3KoWvG8VWrwNiqVHUnwA2aWx.png"
+            alt="Zoul Capital logo"
+            width="42"
+            height="42"
+            class="rounded"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="text-3xl font-bold">Zoul Capital</span>
+        </div>
+        <p class="text-lg">Spain</p>
+        <p class="text-lg">&copy; {new Date().getFullYear()} Zoul Capital. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const revealElements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) {
+      for (const el of revealElements) {
+        el.classList.add("is-visible");
+      }
+    } else {
+      document.documentElement.classList.add("has-reveal");
+
+      for (const el of revealElements) {
+        const delay = el.getAttribute("data-delay");
+        if (delay) {
+          el.style.transitionDelay = `${delay}ms`;
+        }
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        },
+        {
+          threshold: 0.18,
+          rootMargin: "0px 0px -8% 0px",
+        },
+      );
+
+      for (const el of revealElements) {
+        observer.observe(el);
+      }
+    }
+  </script>
+
+  <style is:global>
+    .has-reveal [data-reveal] {
+      opacity: 0;
+      transform: translate3d(0, 36px, 0) scale(0.985);
+      transition: opacity 0.6s ease-out, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .has-reveal [data-reveal].reveal-left {
+      transform: translate3d(-44px, 0, 0);
+    }
+
+    .has-reveal [data-reveal].reveal-right {
+      transform: translate3d(44px, 0, 0);
+    }
+
+    .has-reveal [data-reveal].reveal-down {
+      transform: translate3d(0, -22px, 0);
+    }
+
+    .has-reveal [data-reveal].is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  </style>
+</MainLayout>

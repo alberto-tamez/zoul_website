@@ -1,0 +1,73 @@
+<div id="tsparticles" class="absolute inset-0 -z-10" aria-hidden="true"></div>
+
+<script>
+  import { tsParticles } from "@tsparticles/engine";
+  import { loadSlim } from "@tsparticles/slim";
+  import type { ISourceOptions } from "@tsparticles/engine";
+
+  const getParticleCount = () => {
+    const width = window.innerWidth;
+    if (width < 768) return 40;
+    if (width < 1024) return 60;
+    return 80;
+  };
+
+  const buildOptions = (count: number): ISourceOptions => ({
+    background: {
+      color: { value: "#6B21E8" },
+    },
+    fpsLimit: 120,
+    interactivity: {
+      events: {
+        onClick: { enable: true, mode: "push" },
+        onHover: { enable: true, mode: "repulse" },
+        resize: { enable: true, delay: 0 },
+      },
+      modes: {
+        push: { quantity: 4 },
+        repulse: { distance: 200, duration: 0.4 },
+      },
+    },
+    particles: {
+      color: { value: "#ffffff" },
+      links: {
+        color: "#ffffff",
+        distance: 150,
+        enable: true,
+        opacity: 0.5,
+        width: 1,
+      },
+      move: {
+        direction: "none",
+        enable: true,
+        outModes: { default: "bounce" },
+        random: false,
+        speed: 2,
+        straight: false,
+      },
+      number: {
+        density: { enable: true, width: 800, height: 800 },
+        value: count,
+        limit: { mode: "delete", value: 80 },
+      },
+      opacity: { value: 0.5 },
+      shape: { type: "circle" },
+      size: { value: { min: 1, max: 5 } },
+    },
+    detectRetina: true,
+  });
+
+  const initParticles = async () => {
+    await loadSlim(tsParticles);
+    await tsParticles.load({ id: "tsparticles", options: buildOptions(getParticleCount()) });
+
+    window.addEventListener("resize", async () => {
+      const container = tsParticles.item(0);
+      if (!container) return;
+      container.destroy();
+      await tsParticles.load({ id: "tsparticles", options: buildOptions(getParticleCount()) });
+    });
+  };
+
+  initParticles();
+</script>

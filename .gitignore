@@ -3,8 +3,12 @@ __v0_runtime_loader.js
 __v0_devtools.tsx
 __v0_jsx-dev-runtime.ts
 
-# Common ignores
+# Build output and caches
 node_modules/
+.astro/
+dist/
 .next/
+
+# Local env and OS files
 .env*.local
 .DS_Store

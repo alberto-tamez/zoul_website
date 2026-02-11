@@ -1,0 +1,84 @@
+---
+import "@/styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string[];
+  canonicalPath?: string;
+  ogImage?: string;
+  twitterImage?: string;
+  noIndex?: boolean;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const {
+  title,
+  description,
+  keywords = [],
+  canonicalPath = "/",
+  ogImage = "/og-image.jpg",
+  twitterImage = "/twitter-image.jpg",
+  noIndex = false,
+  structuredData,
+} = Astro.props;
+
+const site = Astro.site ?? new URL("https://zoul.capital");
+const canonical = new URL(canonicalPath, site).toString();
+const ogImageUrl = new URL(ogImage, site).toString();
+const twitterImageUrl = new URL(twitterImage, site).toString();
+const robotsContent = noIndex ? "noindex, nofollow" : "index, follow";
+const schemaBlocks = Array.isArray(structuredData)
+  ? structuredData
+  : structuredData
+    ? [structuredData]
+    : [];
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords.length > 0 && <meta name="keywords" content={keywords.join(", ")} />}
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={robotsContent} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Zoul Capital" />
+    <meta property="og:image" content={ogImageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={twitterImageUrl} />
+
+    <meta name="theme-color" content="#6B21E8" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    {
+      schemaBlocks.map((schema) => (
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+      ))
+    }
+  </head>
+  <body style="font-family: Inter, sans-serif;">
+    <slot />
+  </body>
+</html>
